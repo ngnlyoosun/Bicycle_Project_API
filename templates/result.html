@@ -1,0 +1,26 @@
+<!--Bicycle Thefts
+COMP247 (sec.003) 
+Group 03 
+Sayed Fayaz (3011099990) 
+Yoo Sun Song 301091906-->
+
+{% extends "base.html" %}
+{% block title %}Result Page{% endblock %}
+{% block content %}
+<div style="text-align: center">
+<h1>{{ result }}</h1>
+{% if prediction[0] == 1 %} 
+         <img src ="static/images/found.jpg" height= 400 />
+         <h2>There's a good possibility you'll find a bicycle.</h2>
+         <h2>Prediction = {{ prediction[0] }}</h2>
+         <h2>Model Name: {{ model_name }}</h2>
+      {% elif prediction[0] == 0 %} 
+         <img src ="static/images/lost.png" height= 400 />
+         <h2>You are less likely to find a bicycle.</h2>
+         <h2>Prediction = {{ prediction[0] }}</h2>
+         <h2>Model Name: {{ model_name }}</h2>
+        
+{% endif %}
+<a href="/testing"><button class="grey">Go Back</button></a>
+</div>      
+{% endblock %}

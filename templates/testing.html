@@ -1,0 +1,231 @@
+<!--Bicycle Thefts
+COMP247 (sec.003) 
+Group 03 
+Sayed Fayaz (3011099990) 
+Yoo Sun Song 301091906-->
+
+{% extends "base.html" %}
+{% block title %}Testing Page{% endblock %}
+{% block content %}
+<h4 class ="container pt-4 my-4">
+<form action="/result" method="POST">
+    <label for="model">classifier</label>
+    <select id="model" name="model" class="btn btn-dark">
+        <option value="Decision_Tree">Decision Tree</option>
+        <option value="Random_Forest">Random Forest</option>
+        <option value="Logistic_Regression">Logistic Regression</option>
+        <option value="Neural_Networks">Neural Network</option>
+        <option value="Support_Victor_Machines">Support Vector Machines</option>
+        </select>
+    
+    <br>
+    <br>
+    <label for="Occurrence_Year">Occurrence Year</label>
+    <select id="Occurrence_Year" name="Occurrence_Year" class="btn btn-dark">
+    <option value="2009">2009</option>
+    <option value="2010">2010</option>
+    <option value="2011">2011</option>
+    <option value="2012">2012</option>
+    <option value="2013">2013</option>
+    <option value="2014">2014</option>
+    <option value="2015">2015</option>
+    <option value="2016">2016</option>
+    <option value="2017">2017</option>
+    <option value="2018">2018</option>
+    <option value="2019">2019</option>
+    <option value="2020">2020</option>
+    <option value="2021">2021</option>
+    </select>
+    &nbsp;&nbsp;&nbsp;
+    <label for="Occurrence_DayOfMonth">Occurrence_DayOfMonth</label>
+    <input type="text" id="Occurrence_DayOfMonth" name="Occurrence_DayOfMonth" class="form-control-sm" placeholder="1~31">
+    <br>
+    <label for="Occurrence_DayOfYear">Occurrence_DayOfYear</label>
+    <input type="text" id="Occurrence_DayOfYear" name="Occurrence_DayOfYear" class="form-control-sm" placeholder="1~366">
+    &nbsp;&nbsp;&nbsp;
+    <label for="Occurrence_Hour">Occurrence_Hour</label>
+    <select id="Occurrence_Hour" name="Occurrence_Hour" class="btn btn-dark">
+    <option value="0">0</option>
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+    <option value="6">6</option>
+    <option value="7">7</option>
+    <option value="8">8</option>
+    <option value="9">9</option>
+    <option value="10">10</option>
+    <option value="11">11</option>
+    <option value="12">12</option>
+    <option value="13">13</option>
+    <option value="14">14</option>
+    <option value="15">15</option>
+    <option value="16">16</option>
+    <option value="17">17</option>
+    <option value="18">18</option>
+    <option value="19">19</option>
+    <option value="20">20</option>
+    <option value="21">21</option>
+    <option value="22">22</option>
+    <option value="23">23</option>
+    </select>
+    <br>
+    <label for="Bike_Speed">Bike_Speed</label>
+    <input type="text" id="Bike_Speed" name="Bike_Speed" class="form-control-sm" placeholder="0~99">
+    &nbsp;&nbsp;&nbsp;
+    <label for="Cost_of_Bike">Cost_of_Bike</label>
+    <input type="text" id="Cost_of_Bike" name="Cost_of_Bike" class="form-control-sm" placeholder="0~120000">
+    <br>
+    <label for="Longitude">Longitude</label>
+    <input type="text" id="Longitude" name="Longitude" class="form-control-sm" placeholder="-79.82369959~0">
+    &nbsp;&nbsp;&nbsp;
+    <label for="Latitude">Latitude</label>
+    <input type="text" id="Latitude" name="Latitude" class="form-control-sm" placeholder="0~43.90553437">
+    <br>
+    <label for="Premises_Type_Commercial">Premises_Type_Commercial</label>
+    <select id="Premises_Type_Commercial" name="Premises_Type_Commercial" class="btn btn-dark">
+    <option value="0">0</option>
+    <option value="1">1</option>
+    </select>
+    &nbsp;&nbsp;&nbsp;
+    <label for="Premises_Type_Educational">Premises_Type_Educational</label>
+    <select id="Premises_Type_Educational" name="Premises_Type_Educational" class="btn btn-dark">
+    <option value="0">0</option>
+    <option value="1">1</option>
+    </select>
+    <br>
+    <label for="Premises_Type_House">Premises_Type_House</label>
+    <select id="Premises_Type_House" name="Premises_Type_House" class="btn btn-dark">
+    <option value="0">0</option>
+    <option value="1">1</option>
+    </select>
+    &nbsp;&nbsp;&nbsp;
+    <label for="Premises_Type_Other">Premises_Type_Other</label>
+    <select id="Premises_Type_Other" name="Premises_Type_Other" class="btn btn-dark">
+    <option value="0">0</option>
+    <option value="1">1</option>
+    </select>
+    <br>
+    <label for="Premises_Type_Outside">Premises_Type_Outside</label>
+    <select id="Premises_Type_Outside" name="Premises_Type_Outside" class="btn btn-dark">
+    <option value="0">0</option>
+    <option value="1">1</option>
+    </select>
+    &nbsp;&nbsp;&nbsp;
+    <label for="Premises_Type_Transit">Premises_Type_Transit</label>
+    <select id="Premises_Type_Transit" name="Premises_Type_Transit" class="btn btn-dark">
+    <option value="0">0</option>
+    <option value="1">1</option>
+    </select>
+    <br>
+    <label for="Occurrence_DayOfWeek_Monday">Occurrence_DayOfWeek_Monday</label>
+    <select id="Occurrence_DayOfWeek_Monday" name="Occurrence_DayOfWeek_Monday" class="btn btn-dark">
+    <option value="0">0</option>
+    <option value="1">1</option>
+    </select>
+    &nbsp;&nbsp;&nbsp;
+    <label for="Occurrence_DayOfWeek_Saturday">Occurrence_DayOfWeek_Saturday</label>
+    <select id="Occurrence_DayOfWeek_Saturday" name="Occurrence_DayOfWeek_Saturday" class="btn btn-dark">
+    <option value="0">0</option>
+    <option value="1">1</option>
+    </select>
+    <br>
+    <label for="Occurrence_DayOfWeek_Sunday">Occurrence_DayOfWeek_Sunday</label>
+    <select id="Occurrence_DayOfWeek_Sunday" name="Occurrence_DayOfWeek_Sunday" class="btn btn-dark">
+    <option value="0">0</option>
+    <option value="1">1</option>
+    </select>
+    &nbsp;&nbsp;&nbsp;
+    <label for="Occurrence_DayOfWeek_Thursday">Occurrence_DayOfWeek_Thursday</label>
+    <select id="Occurrence_DayOfWeek_Thursday" name="Occurrence_DayOfWeek_Thursday" class="btn btn-dark">
+    <option value="0">0</option>
+    <option value="1">1</option>
+    </select>
+    <br>
+    <label for="Occurrence_DayOfWeek_Tuesday">Occurrence_DayOfWeek_Tuesday</label>
+    <select id="Occurrence_DayOfWeek_Tuesday" name="Occurrence_DayOfWeek_Tuesday" class="btn btn-dark">
+    <option value="0">0</option>
+    <option value="1">1</option>
+    </select>
+    &nbsp;&nbsp;&nbsp;
+    <label for="Occurrence_DayOfWeek_Wednesday">Occurrence_DayOfWeek_Wednesday</label>
+    <select id="Occurrence_DayOfWeek_Wednesday" name="Occurrence_DayOfWeek_Wednesday" class="btn btn-dark">
+    <option value="0">0</option>
+    <option value="1">1</option>
+    </select>
+    <br>
+    <label for="Occurrence_Month_August">Occurrence_Month_August</label>
+    <select id="Occurrence_Month_August" name="Occurrence_Month_August" class="btn btn-dark">
+    <option value="0">0</option>
+    <option value="1">1</option>
+    </select>
+    &nbsp;&nbsp;&nbsp;
+    <label for="Occurrence_Month_December">Occurrence_Month_December</label>
+    <select id="Occurrence_Month_December" name="Occurrence_Month_December" class="btn btn-dark">
+    <option value="0">0</option>
+    <option value="1">1</option>
+    </select>
+    <br>
+    <label for="Occurrence_Month_February">Occurrence_Month_February</label>
+    <select id="Occurrence_Month_February" name="Occurrence_Month_February" class="btn btn-dark">
+    <option value="0">0</option>
+    <option value="1">1</option>
+    </select>
+    &nbsp;&nbsp;&nbsp;
+    <label for="Occurrence_Month_January">Occurrence_Month_January</label>
+    <select id="Occurrence_Month_January" name="Occurrence_Month_January" class="btn btn-dark">
+    <option value="0">0</option>
+    <option value="1">1</option>
+    </select>
+    <br>
+    <label for="Occurrence_Month_July">Occurrence_Month_July</label>
+    <select id="Occurrence_Month_July" name="Occurrence_Month_July" class="btn btn-dark">
+    <option value="0">0</option>
+    <option value="1">1</option>
+    </select>
+    &nbsp;&nbsp;&nbsp;
+    <label for="Occurrence_Month_June">Occurrence_Month_June</label>
+    <select id="Occurrence_Month_June" name="Occurrence_Month_June" class="btn btn-dark">
+    <option value="0">0</option>
+    <option value="1">1</option>
+    </select>
+    <br>
+    <label for="Occurrence_Month_March">Occurrence_Month_March</label>
+    <select id="Occurrence_Month_March" name="Occurrence_Month_March" class="btn btn-dark">
+    <option value="0">0</option>
+    <option value="1">1</option>
+    </select>
+    &nbsp;&nbsp;&nbsp;
+    <label for="Occurrence_Month_May">Occurrence_Month_May</label>
+    <select id="Occurrence_Month_May" name="Occurrence_Month_May" class="btn btn-dark">
+    <option value="0">0</option>
+    <option value="1">1</option>
+    </select>
+    <br>
+    <label for="Occurrence_Month_November">Occurrence_Month_November</label>
+    <select id="Occurrence_Month_November" name="Occurrence_Month_November" class="btn btn-dark">
+    <option value="0">0</option>
+    <option value="1">1</option>
+    </select>
+    &nbsp;&nbsp;&nbsp;
+    <label for="Occurrence_Month_October">Occurrence_Month_October</label>
+    <select id="Occurrence_Month_October" name="Occurrence_Month_October" class="btn btn-dark">
+    <option value="0">0</option>
+    <option value="1">1</option>
+    </select>
+    <br>
+    <label for="Occurrence_Month_September">Occurrence_Month_September</label>
+    <select id="Occurrence_Month_September" name="Occurrence_Month_September" class="btn btn-dark">
+    <option value="0">0</option>
+    <option value="1">1</option>
+    </select>
+    <br>
+    <br>
+    <input type="submit" value="Submit" class="btn btn-warning">
+</h4>
+
+
+
+
+{% endblock %}

@@ -1,0 +1,32 @@
+<!--Bicycle Thefts
+COMP247 (sec.003) 
+Group 03 
+Sayed Fayaz (3011099990) 
+Yoo Sun Song 301091906-->
+
+{% extends "base.html" %}
+{% block title %}Home Page{% endblock %}
+{% block content %}
+<div style="text-align: center">
+<h1> Model Graphs</h1>
+<br>
+<h3>Logistic Regression </h3>
+<img src ="static/images/logi.png" height= 400 />
+<hr width = "100%" color = "blue" size = "3">
+<h3>Decision Tree  </h3>
+<img src ="static/images/dTree.png" height= 400 />
+<hr width = "100%" color = "blue" size = "3">
+<h3>Random Forest</h3>
+<img src ="static/images/rForest.png" height= 400 />
+<hr width = "100%" color = "blue" size = "3">
+<h3>Neural Network</h3>
+<img src ="static/images/nn.png" height= 400 />
+<hr width = "100%" color = "blue" size = "3">
+<h3>SVM</h3>
+<img src ="static/images/svm.png" height= 400 />
+
+
+
+</div>
+<h3 style="text-align:right"><a href="{{url_for('testing')}}"> >>>>testing the models</a></h3>
+{% endblock %}
